@@ -1,5 +1,5 @@
 # SigP
-Signal visualization tool on OSX for usb NI-DAQ. 
+Signal visualization tool on OSX for usb NI-DAQ devices. 
 
 #Neccessary Prerequisites
 - ni-daqmx base software
