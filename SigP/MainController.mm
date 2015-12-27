@@ -23,21 +23,27 @@
 -(void)awakeFromNib
 {
     [super awakeFromNib];
-    
+    writeOk = false;
     [self.mainWindow setBackgroundColor:[NSColor colorWithCalibratedRed:20/255.0f green:10/255.0f blue:10/255.0f alpha:1.0]];
       NSString *address = @"OFFLINE";
+    channelVal1 = 0;
+    channelVal2 = 0;
+    channelVal3 = 0;
+    channelVal4 = 0;
+    channelVal5 = 0;
+    channelVal6 = 0;
     
  }
 
 - (IBAction)filterButtonClicked:(NSButton *)sender
 {
-    [self.dataReader activateKoikefilterWithBuffersize: 50];
+    [self.dataReader activateKoikefilterWithBuffersize: 100];
     //    NSLog(@"%d",[bufferTimeSlider intValue] * [dataRateSlider intValue]);
 }
 
 - (IBAction)normalizeButtonClicked:(NSButton *)sender
 {
-    [self.dataReader activateNormalizationWithBufferSize: 200];
+    [self.dataReader activateNormalizationWithBufferSize: 500];
 //    NSLog(@"%d",[normalizationSlider intValue] * [dataRateSlider intValue]);
 }
 
@@ -48,7 +54,7 @@
 }
 
 - (IBAction)basealignButtonClicked:(NSButton *)sender {
-    [self.dataReader activateZscoreWithBufferSize:50 * 2];
+    [self.dataReader activateZscoreWithBufferSize:100 * 2];
 }
 
 - (IBAction)readFromDAQ:(NSButton *)sender {
@@ -88,14 +94,22 @@
 
             
             channelVal1 = [[[[data objectAtIndex:0] lastObject] objectForKey:@"y"] doubleValue];
-            channelVal2 = [[[[data objectAtIndex:1] lastObject] objectForKey:@"y"] doubleValue];
-            channelVal3 = [[[[data objectAtIndex:2] lastObject] objectForKey:@"y"] doubleValue];
-            channelVal4 = [[[[data objectAtIndex:3] lastObject] objectForKey:@"y"] doubleValue];
-            channelVal5 = [[[[data objectAtIndex:4] lastObject] objectForKey:@"y"] doubleValue];
-            channelVal6 = [[[[data objectAtIndex:5] lastObject] objectForKey:@"y"] doubleValue];
-            
-            NSLog(@"%lf %lf %lf %lf %lf %lf", channelVal1, channelVal2, channelVal3, channelVal4, channelVal5, channelVal6);
+//            channelVal2 = [[[[data objectAtIndex:1] lastObject] objectForKey:@"y"] doubleValue];
+//            channelVal3 = [[[[data objectAtIndex:2] lastObject] objectForKey:@"y"] doubleValue];
+//            channelVal4 = [[[[data objectAtIndex:3] lastObject] objectForKey:@"y"] doubleValue];
+//            channelVal5 = [[[[data objectAtIndex:4] lastObject] objectForKey:@"y"] doubleValue];
+//            channelVal6 = [[[[data objectAtIndex:5] lastObject] objectForKey:@"y"] doubleValue];
+    
+    NSLog(@"%@",[NSString stringWithFormat:@"%lf,%lf,%lf,%lf,%lf,%lf\n", channelVal1, channelVal2, channelVal3, channelVal4, channelVal5, channelVal6]);
 
+    if (writeOk) {
+        for (GCDAsyncSocket *socket in connectedSockets) {
+//            socket.delegate = self;
+            NSData *status = [[NSString stringWithFormat:@"%lf,%lf,%lf,%lf,%lf,%lf\n", channelVal1, channelVal2, channelVal3, channelVal4, channelVal5, channelVal6] dataUsingEncoding:NSUTF8StringEncoding];
+            [socket writeData:status withTimeout:100 tag:1];
+
+        }
+    }
 }
 
 - (IBAction)serverButtonClicked:(NSButton *)sender
@@ -193,7 +207,6 @@
 		
 		[pool release];
         for (GCDAsyncSocket *socket in connectedSockets) {
-            socket.delegate = self;
             NSData *writeOutData = [[NSString stringWithFormat:@"Welcome\n"] dataUsingEncoding:NSUTF8StringEncoding];
             [socket writeData:writeOutData withTimeout:-1 tag:1];
         }
@@ -208,7 +221,7 @@
 //    	NSLog(@"data is written");
     //	if (tag == 2)
     //	{
-    [sock readDataToData:[GCDAsyncSocket CRLFData] withTimeout:-1 tag:tag];
+    [sock readDataToData:[GCDAsyncSocket CRLFData] withTimeout:10 tag:tag];
     //	}
 }
 
@@ -223,9 +236,10 @@
 //        NSLog(@"%@",httpResponse);
         NSRange range = [httpResponse rangeOfString:@"Ack"];
         if (range.location != NSNotFound) {
-            NSData *status = [[NSString stringWithFormat:@"%lf,%lf,%lf,%lf,%lf,%lf\n", channelVal1, channelVal2, channelVal3, channelVal4, channelVal5, channelVal6] dataUsingEncoding:NSUTF8StringEncoding];
+            writeOk = true;
+//            NSData *status = [[NSString stringWithFormat:@"%lf,%lf,%lf,%lf,%lf,%lf\n", channelVal1, channelVal2, channelVal3, channelVal4, channelVal5, channelVal6] dataUsingEncoding:NSUTF8StringEncoding];
 //            NSLog(@"%@",[NSString stringWithFormat:@"%lf,%lf,%lf,%lf,%lf,%lf\n", channelVal1, channelVal2, channelVal3, channelVal4, channelVal5, channelVal6]);
-            [sock writeData:status withTimeout:100 tag:1];
+//            [sock writeData:status withTimeout:100 tag:1];
         }
 		[pool release];
 	});

@@ -78,7 +78,7 @@ int static zscoreBufferSize;
         [channels retain];
         //minimum is 60 fps
         sampleRate = samplingRate;
-        pointsToRead = 1;
+        pointsToRead = 4;
         totalRead = 0;
         currentIndex = -5.0;
         rectify = NO;
@@ -194,8 +194,6 @@ int static zscoreBufferSize;
                 
                 
                 double emgData = data[(pointsToRead*j)+i];
-                NSLog(@"%lf", emgData);
-
                 
                 
                 if (zscoreStat == ZSCORE_WORKING) {
@@ -231,13 +229,20 @@ int static zscoreBufferSize;
                     if ([[normalizeBuffer objectAtIndex:j] count] == normalizeBufferSize)
                     {
                         NSNumber *max = [[[normalizeBuffer objectAtIndex:j] sortedArrayUsingSelector:@selector(compare:)] lastObject];
+                    
                         NSNumber *min = [[[normalizeBuffer objectAtIndex:j] sortedArrayUsingSelector:@selector(compare:)] objectAtIndex:0];
                         double sum = 0;
                         for (NSNumber *sValue in [normalizeBuffer objectAtIndex:j]) {
                             sum += [sValue doubleValue];
                         }
                         sum /= normalizeBufferSize;
-                        [normalizeParameters replaceObjectAtIndex:j withObject:[[NSDictionary alloc] initWithObjectsAndKeys:[NSNumber numberWithDouble:sum], @"avg",min,@"min",max,@"max", nil]];
+                        
+                        double std = 0;
+                        for (NSNumber *sValue in [normalizeBuffer objectAtIndex:j]) {
+                            std += pow([sValue doubleValue] - sum,2);
+                        }
+                        std = sqrt(std / normalizeBufferSize);
+                        [normalizeParameters replaceObjectAtIndex:j withObject:[[NSDictionary alloc] initWithObjectsAndKeys:[NSNumber numberWithDouble:sum], @"avg",min,@"min",max,@"max", [NSNumber numberWithDouble:std], @"std", nil]];
                         NSLog(@"%@",normalizeParameters);
                         if (j+1 == noOfChannels) {
                             normalizeStat = NORMALIZE_ON;
@@ -251,7 +256,11 @@ int static zscoreBufferSize;
                     {
                         double min = [[[normalizeParameters objectAtIndex:j] valueForKey:@"min"] doubleValue];
                         double max = [[[normalizeParameters objectAtIndex:j] valueForKey:@"max"] doubleValue];
-                        finalData = ((finalData - min)/(max - min)) * (1-0) + 0;
+                        double avg = [[[normalizeParameters objectAtIndex:j] valueForKey:@"avg"] doubleValue];
+                        double std = [[[normalizeParameters objectAtIndex:j] valueForKey:@"std"] doubleValue];
+                        
+//                        finalData = ((finalData - min)/(max - min)) * (1-0) + 0;
+                        finalData = ((finalData - (min))/((max * 0.3) - (min))) * (1-0) + 0;
                     }
                 }
                 if (i ==  floor(sampleRate/60)) {

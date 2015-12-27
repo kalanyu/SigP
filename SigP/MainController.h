@@ -22,6 +22,7 @@
     GCDAsyncSocket *listenSocket;
     dispatch_queue_t socketQueue;
     NSMutableArray *connectedSockets;
+    bool writeOk;
     
     double channelVal1, channelVal2, channelVal3, channelVal4, channelVal5, channelVal6;
 }
