@@ -78,7 +78,7 @@ int static zscoreBufferSize;
         [channels retain];
         //minimum is 60 fps
         sampleRate = samplingRate;
-        pointsToRead = sampleRate/40;
+        pointsToRead = 1;
         totalRead = 0;
         currentIndex = -5.0;
         rectify = NO;
@@ -106,10 +106,10 @@ int static zscoreBufferSize;
     //    uInt64      samplesPerChan = 1000; not neccessary because its on cont mode
     
     // Data read parameters
-    #define     bufferSize (uInt32) 2000
+    #define     bufferSize (uInt32) 4000
     float64     data[pointsToRead * noOfChannels];
     int32       pointsRead;
-    float64     timeout = 2.0;
+    float64     timeout = 5.0;
 
     fileManager = [NSFileManager defaultManager];
     NSDate *date = [NSDate date];
@@ -120,7 +120,7 @@ int static zscoreBufferSize;
     DAQmxErrChk (DAQmxBaseCreateTask("",&taskHandle));
     DAQmxErrChk (DAQmxBaseCreateAIVoltageChan(taskHandle,[channels cStringUsingEncoding:NSUTF8StringEncoding],"",DAQmx_Val_Cfg_Default,min,max,DAQmx_Val_Volts,NULL));
     DAQmxErrChk (DAQmxBaseCfgSampClkTiming(taskHandle,clockSource,sampleRate,DAQmx_Val_Rising,DAQmx_Val_ContSamps,0));
-    DAQmxErrChk (DAQmxBaseCfgInputBuffer(taskHandle,200000)); //use a 100,000 sample DMA buffer
+    DAQmxErrChk (DAQmxBaseCfgInputBuffer(taskHandle,0)); //use a 100,000 sample DMA buffer
     DAQmxErrChk (DAQmxBaseStartTask(taskHandle));
     
     //calculate date & time for filename designation
@@ -135,7 +135,7 @@ int static zscoreBufferSize;
         if (![fileManager fileExistsAtPath:[NSString stringWithFormat:@"%@/Desktop/EMGSensingData",NSHomeDirectory()] isDirectory:&ret]) {
             [fileManager createDirectoryAtPath:[NSString stringWithFormat:@"%@/Desktop/EMGSensingData",NSHomeDirectory()] withIntermediateDirectories:YES attributes:nil error:&err];
             if (err) {
-                NSLog(@"%@",err);
+                NSLog(@"%@ %@",err, NSHomeDirectory());
             }
         }
         if([fileManager createFileAtPath:fileName contents:nil attributes:nil])
@@ -194,7 +194,7 @@ int static zscoreBufferSize;
                 
                 
                 double emgData = data[(pointsToRead*j)+i];
-
+                NSLog(@"%lf", emgData);
 
                 
                 

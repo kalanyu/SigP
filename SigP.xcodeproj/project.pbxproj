@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B20C0681C2DA9660019547A /* nidaqmxbase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B20C0661C2DA9660019547A /* nidaqmxbase.framework */; };
+		0B20C0691C2DA9660019547A /* nidaqmxbaselv.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B20C0671C2DA9660019547A /* nidaqmxbaselv.framework */; };
+		0B694CB51C2FAD190005B080 /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B694CB41C2FAD190005B080 /* GCDAsyncSocket.m */; };
 		C3167FF0167B687600BAD431 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3167FEF167B687600BAD431 /* Cocoa.framework */; };
 		C3167FFA167B687600BAD431 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C3167FF8167B687600BAD431 /* InfoPlist.strings */; };
 		C3167FFC167B687600BAD431 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C3167FFB167B687600BAD431 /* main.m */; };
@@ -14,40 +17,15 @@
 		C3168003167B687600BAD431 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C3168002167B687600BAD431 /* AppDelegate.m */; };
 		C3168021167B6D4800BAD431 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3168020167B6D4800BAD431 /* QuartzCore.framework */; };
 		C3168023167B6D4E00BAD431 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3168022167B6D4E00BAD431 /* Security.framework */; };
-		C3168042167B6F1D00BAD431 /* nidaqmxbase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3168040167B6F1D00BAD431 /* nidaqmxbase.framework */; };
-		C3168043167B6F1D00BAD431 /* nidaqmxbaselv.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3168041167B6F1D00BAD431 /* nidaqmxbaselv.framework */; };
 		C3168046167B7DDA00BAD431 /* MainController.mm in Sources */ = {isa = PBXBuildFile; fileRef = C3168045167B7DDA00BAD431 /* MainController.mm */; };
-		C316804E167B840200BAD431 /* ModelGraph.m in Sources */ = {isa = PBXBuildFile; fileRef = C316804D167B840100BAD431 /* ModelGraph.m */; };
-		C3168051167B842000BAD431 /* SigPTabView.m in Sources */ = {isa = PBXBuildFile; fileRef = C3168050167B842000BAD431 /* SigPTabView.m */; };
-		C335F1C91925E72D00937F9E /* CorePlot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3A7BD78192488BE00852534 /* CorePlot.framework */; };
 		C335F1CB1925E81A00937F9E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C335F1CA1925E81A00937F9E /* Images.xcassets */; };
-		C33DA4F3168402E20071A46F /* SigPDisabledButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C33DA4F2168402E20071A46F /* SigPDisabledButton.m */; };
 		C33DA52116843C560071A46F /* NIDAQreader.mm in Sources */ = {isa = PBXBuildFile; fileRef = C33DA51616843C560071A46F /* NIDAQreader.mm */; };
 		C33DA52216843C560071A46F /* KoikeFilter.mm in Sources */ = {isa = PBXBuildFile; fileRef = C33DA51916843C560071A46F /* KoikeFilter.mm */; };
 		C33DA52416843C560071A46F /* FirFilter.mm in Sources */ = {isa = PBXBuildFile; fileRef = C33DA51D16843C560071A46F /* FirFilter.mm */; };
-		C33DA52516843C560071A46F /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = C33DA51F16843C560071A46F /* GCDAsyncSocket.m */; };
 		C34C7FA0174146BA00789B22 /* rightArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = C34C7F9E174146BA00789B22 /* rightArrow.png */; };
 		C34C7FA1174146BA00789B22 /* leftArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = C34C7F9F174146BA00789B22 /* leftArrow.png */; };
-		C398ADB61680110F00DD48D3 /* SigPButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C398ADB51680110F00DD48D3 /* SigPButton.m */; };
 		C3A7BD6F1924880300852534 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3A7BD6E1924880300852534 /* MainMenu.xib */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		C3A7BD77192488BE00852534 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C3A7BD71192488BE00852534 /* CorePlot.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 8DC2EF5B0486A6940098B216;
-			remoteInfo = CorePlot;
-		};
-		C3A7BD79192488BE00852534 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C3A7BD71192488BE00852534 /* CorePlot.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 0730F600109492D800E95162;
-			remoteInfo = UnitTests;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		C316801E167B6C6100BAD431 /* CopyFiles */ = {
@@ -62,6 +40,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0B20C0661C2DA9660019547A /* nidaqmxbase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = nidaqmxbase.framework; sourceTree = "<group>"; };
+		0B20C0671C2DA9660019547A /* nidaqmxbaselv.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = nidaqmxbaselv.framework; sourceTree = "<group>"; };
+		0B20C06A1C2DA98A0019547A /* NIDAQmxBase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NIDAQmxBase.h; sourceTree = "<group>"; };
+		0B694CB31C2FAD190005B080 /* GCDAsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncSocket.h; sourceTree = "<group>"; };
+		0B694CB41C2FAD190005B080 /* GCDAsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncSocket.m; sourceTree = "<group>"; };
 		C3167FEB167B687600BAD431 /* SigP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SigP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3167FEF167B687600BAD431 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		C3167FF2167B687600BAD431 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -76,33 +59,19 @@
 		C3168002167B687600BAD431 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		C3168020167B6D4800BAD431 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		C3168022167B6D4E00BAD431 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		C3168040167B6F1D00BAD431 /* nidaqmxbase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = nidaqmxbase.framework; sourceTree = "<group>"; };
-		C3168041167B6F1D00BAD431 /* nidaqmxbaselv.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = nidaqmxbaselv.framework; sourceTree = "<group>"; };
 		C3168044167B7DDA00BAD431 /* MainController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainController.h; sourceTree = "<group>"; };
 		C3168045167B7DDA00BAD431 /* MainController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MainController.mm; sourceTree = "<group>"; };
-		C316804C167B840100BAD431 /* ModelGraph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelGraph.h; sourceTree = "<group>"; };
-		C316804D167B840100BAD431 /* ModelGraph.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelGraph.m; sourceTree = "<group>"; };
-		C316804F167B842000BAD431 /* SigPTabView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SigPTabView.h; sourceTree = "<group>"; };
-		C3168050167B842000BAD431 /* SigPTabView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SigPTabView.m; sourceTree = "<group>"; };
 		C335F1CA1925E81A00937F9E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		C33DA4F1168402E20071A46F /* SigPDisabledButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SigPDisabledButton.h; sourceTree = "<group>"; };
-		C33DA4F2168402E20071A46F /* SigPDisabledButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SigPDisabledButton.m; sourceTree = "<group>"; };
 		C33DA51516843C560071A46F /* Filter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Filter.h; sourceTree = "<group>"; };
 		C33DA51616843C560071A46F /* NIDAQreader.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NIDAQreader.mm; sourceTree = "<group>"; };
 		C33DA51716843C560071A46F /* NIDAQreader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NIDAQreader.h; sourceTree = "<group>"; };
-		C33DA51816843C560071A46F /* NIDAQmxBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NIDAQmxBase.h; sourceTree = "<group>"; };
 		C33DA51916843C560071A46F /* KoikeFilter.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = KoikeFilter.mm; sourceTree = "<group>"; };
 		C33DA51A16843C560071A46F /* KoikeFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KoikeFilter.h; sourceTree = "<group>"; };
 		C33DA51D16843C560071A46F /* FirFilter.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FirFilter.mm; sourceTree = "<group>"; };
-		C33DA51E16843C560071A46F /* GCDAsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncSocket.h; sourceTree = "<group>"; };
-		C33DA51F16843C560071A46F /* GCDAsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncSocket.m; sourceTree = "<group>"; };
 		C33DA52016843C560071A46F /* FirFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirFilter.h; sourceTree = "<group>"; };
 		C34C7F9E174146BA00789B22 /* rightArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rightArrow.png; sourceTree = "<group>"; };
 		C34C7F9F174146BA00789B22 /* leftArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = leftArrow.png; sourceTree = "<group>"; };
-		C398ADB41680110F00DD48D3 /* SigPButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SigPButton.h; sourceTree = "<group>"; };
-		C398ADB51680110F00DD48D3 /* SigPButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SigPButton.m; sourceTree = "<group>"; };
 		C3A7BD6E1924880300852534 /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
-		C3A7BD71192488BE00852534 /* CorePlot.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CorePlot.xcodeproj; path = ../../Downloads/CorePlot_1.5.1/Source/framework/CorePlot.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,12 +79,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C335F1C91925E72D00937F9E /* CorePlot.framework in Frameworks */,
 				C3168023167B6D4E00BAD431 /* Security.framework in Frameworks */,
 				C3168021167B6D4800BAD431 /* QuartzCore.framework in Frameworks */,
+				0B20C0681C2DA9660019547A /* nidaqmxbase.framework in Frameworks */,
+				0B20C0691C2DA9660019547A /* nidaqmxbaselv.framework in Frameworks */,
 				C3167FF0167B687600BAD431 /* Cocoa.framework in Frameworks */,
-				C3168042167B6F1D00BAD431 /* nidaqmxbase.framework in Frameworks */,
-				C3168043167B6F1D00BAD431 /* nidaqmxbaselv.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,9 +93,8 @@
 		C3167FE0167B687600BAD431 = {
 			isa = PBXGroup;
 			children = (
-				C3A7BD71192488BE00852534 /* CorePlot.xcodeproj */,
-				C3168040167B6F1D00BAD431 /* nidaqmxbase.framework */,
-				C3168041167B6F1D00BAD431 /* nidaqmxbaselv.framework */,
+				0B20C0661C2DA9660019547A /* nidaqmxbase.framework */,
+				0B20C0671C2DA9660019547A /* nidaqmxbaselv.framework */,
 				C316803F167B6E4700BAD431 /* DAQ_Filters_Network */,
 				C3168022167B6D4E00BAD431 /* Security.framework */,
 				C3168020167B6D4800BAD431 /* QuartzCore.framework */,
@@ -173,14 +140,6 @@
 				C3167FF6167B687600BAD431 /* Supporting Files */,
 				C3168044167B7DDA00BAD431 /* MainController.h */,
 				C3168045167B7DDA00BAD431 /* MainController.mm */,
-				C316804C167B840100BAD431 /* ModelGraph.h */,
-				C316804D167B840100BAD431 /* ModelGraph.m */,
-				C316804F167B842000BAD431 /* SigPTabView.h */,
-				C3168050167B842000BAD431 /* SigPTabView.m */,
-				C398ADB41680110F00DD48D3 /* SigPButton.h */,
-				C398ADB51680110F00DD48D3 /* SigPButton.m */,
-				C33DA4F1168402E20071A46F /* SigPDisabledButton.h */,
-				C33DA4F2168402E20071A46F /* SigPDisabledButton.m */,
 				C335F1CA1925E81A00937F9E /* Images.xcassets */,
 			);
 			path = SigP;
@@ -205,13 +164,13 @@
 				C33DA51516843C560071A46F /* Filter.h */,
 				C33DA51716843C560071A46F /* NIDAQreader.h */,
 				C33DA51616843C560071A46F /* NIDAQreader.mm */,
-				C33DA51816843C560071A46F /* NIDAQmxBase.h */,
+				0B20C06A1C2DA98A0019547A /* NIDAQmxBase.h */,
 				C33DA51916843C560071A46F /* KoikeFilter.mm */,
 				C33DA51A16843C560071A46F /* KoikeFilter.h */,
 				C33DA51D16843C560071A46F /* FirFilter.mm */,
-				C33DA51E16843C560071A46F /* GCDAsyncSocket.h */,
-				C33DA51F16843C560071A46F /* GCDAsyncSocket.m */,
 				C33DA52016843C560071A46F /* FirFilter.h */,
+				0B694CB31C2FAD190005B080 /* GCDAsyncSocket.h */,
+				0B694CB41C2FAD190005B080 /* GCDAsyncSocket.m */,
 			);
 			name = DAQ_Filters_Network;
 			sourceTree = "<group>";
@@ -223,15 +182,6 @@
 				C34C7F9F174146BA00789B22 /* leftArrow.png */,
 			);
 			name = Images;
-			sourceTree = "<group>";
-		};
-		C3A7BD72192488BE00852534 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				C3A7BD78192488BE00852534 /* CorePlot.framework */,
-				C3A7BD7A192488BE00852534 /* UnitTests.octest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -274,35 +224,12 @@
 			mainGroup = C3167FE0167B687600BAD431;
 			productRefGroup = C3167FEC167B687600BAD431 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = C3A7BD72192488BE00852534 /* Products */;
-					ProjectRef = C3A7BD71192488BE00852534 /* CorePlot.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				C3167FEA167B687600BAD431 /* SigP */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		C3A7BD78192488BE00852534 /* CorePlot.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = CorePlot.framework;
-			remoteRef = C3A7BD77192488BE00852534 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		C3A7BD7A192488BE00852534 /* UnitTests.octest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = UnitTests.octest;
-			remoteRef = C3A7BD79192488BE00852534 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		C3167FE9167B687600BAD431 /* Resources */ = {
@@ -328,14 +255,10 @@
 				C3167FFC167B687600BAD431 /* main.m in Sources */,
 				C3168003167B687600BAD431 /* AppDelegate.m in Sources */,
 				C3168046167B7DDA00BAD431 /* MainController.mm in Sources */,
-				C316804E167B840200BAD431 /* ModelGraph.m in Sources */,
-				C3168051167B842000BAD431 /* SigPTabView.m in Sources */,
-				C398ADB61680110F00DD48D3 /* SigPButton.m in Sources */,
-				C33DA4F3168402E20071A46F /* SigPDisabledButton.m in Sources */,
 				C33DA52116843C560071A46F /* NIDAQreader.mm in Sources */,
 				C33DA52216843C560071A46F /* KoikeFilter.mm in Sources */,
+				0B694CB51C2FAD190005B080 /* GCDAsyncSocket.m in Sources */,
 				C33DA52416843C560071A46F /* FirFilter.mm in Sources */,
-				C33DA52516843C560071A46F /* GCDAsyncSocket.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -423,7 +346,8 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)\"",
+					"$(SRCROOT)",
+					"$(PROJECT_DIR)",
 				);
 				GCC_INPUT_FILETYPE = automatic;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -446,7 +370,8 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)\"",
+					"$(SRCROOT)",
+					"$(PROJECT_DIR)",
 				);
 				GCC_INPUT_FILETYPE = automatic;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;

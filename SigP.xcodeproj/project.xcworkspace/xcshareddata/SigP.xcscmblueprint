@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "491D32D9DEA76A7FC53233BF7E7C6E0F17CF1892",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "1C75F1C5CFCB95B3702F6F632FA05ED5244B519E" : 0,
+    "491D32D9DEA76A7FC53233BF7E7C6E0F17CF1892" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "9A8DC610-EB24-441C-8A68-E23385749AC9",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "1C75F1C5CFCB95B3702F6F632FA05ED5244B519E" : "CocoaAsyncSocket\/",
+    "491D32D9DEA76A7FC53233BF7E7C6E0F17CF1892" : "SigP\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "SigP",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "SigP.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/robbiehanson\/CocoaAsyncSocket.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "1C75F1C5CFCB95B3702F6F632FA05ED5244B519E"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/kalanyu\/SigP.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "491D32D9DEA76A7FC53233BF7E7C6E0F17CF1892"
+    }
+  ]
+}
